@@ -3,6 +3,7 @@ import {Badge, Col} from 'react-bootstrap';
 import {MISSION_BADGE} from '../constants';
 import {RoverProps} from "../redux/rovers/RoverTypes";
 import {connect} from "react-redux";
+import {StateType} from "../redux/StateType";
 
 
 const Rovers = ({rovers}: any) => {
@@ -15,8 +16,9 @@ const Rovers = ({rovers}: any) => {
                     <tbody>
                     <tr>
                         <td>Mission Status:</td>
-                        <td><Badge
-                            variant={MISSION_BADGE.complete === rover.status ? MISSION_BADGE.complete : MISSION_BADGE.active as any}>{rover.status}</Badge>
+                        <td>
+                            {MISSION_BADGE.success === rover.status && <Badge variant="success">{rover.status}</Badge>}
+                            {MISSION_BADGE.primary === rover.status && <Badge variant="primary">{rover.status}</Badge>}
                         </td>
                     </tr>
                     <tr>
@@ -38,7 +40,7 @@ const Rovers = ({rovers}: any) => {
     )
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         rovers: state.roverReducer.rovers
     };

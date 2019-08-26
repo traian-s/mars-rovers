@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {selectEarthDate} from "../redux/form/FormActions";
 import {EarthDateSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
+import {StateType} from "../redux/StateType";
 
 const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDateSelectorProps) => {
 
@@ -22,7 +23,7 @@ const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDat
     );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         earthDate: state.formReducer.earthDate,
         selectedRover: state.formReducer.selectedRover

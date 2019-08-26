@@ -3,6 +3,7 @@ import {Form} from "react-bootstrap";
 import {connect} from "react-redux";
 import {setDateType} from "../redux/form/FormActions";
 import {DATE_TYPES} from "../constants";
+import {StateType} from "../redux/StateType";
 
 const DateTypeSelector = ({activeType, setDateType}: { activeType: string, setDateType: (dateType: string) => void }) => {
     return (
@@ -16,7 +17,7 @@ const DateTypeSelector = ({activeType, setDateType}: { activeType: string, setDa
     );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {activeType: state.formReducer.dateType};
 };
 

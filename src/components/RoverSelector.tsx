@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {selectRover} from "../redux/form/FormActions";
 import {RoverProps} from "../redux/rovers/RoverTypes";
 import {FormControlProps} from "react-bootstrap/es";
+import {StateType} from "../redux/StateType";
 
 const RoverSelector = ({selectRover, rovers}: { selectRover: (rover: RoverProps | undefined) => void, rovers: RoverProps[] }) => {
     return (
@@ -18,7 +19,7 @@ const RoverSelector = ({selectRover, rovers}: { selectRover: (rover: RoverProps 
     );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         rovers: state.roverReducer.rovers
     };

@@ -18,7 +18,7 @@ export const fetchRoversError = (error: any) => ({
 });
 
 export const fetchRovers = () => {
-    return (dispatch: Function) => {
+    return (dispatch: any) => {
         dispatch(fetchRoversPending());
         axios.get(API_ROVERS_ENDPOINT)
             .then(res => {

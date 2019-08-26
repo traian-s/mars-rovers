@@ -21,7 +21,7 @@ export interface formReducerProps {
     dateType: string,
     roverName: string,
     earthDate: string,
-    solDate: number,
+    solDate: string,
     camera: string,
     selectedRover: RoverProps
 }

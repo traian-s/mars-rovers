@@ -2,6 +2,7 @@ import axios from 'axios';
 import {API_ROVERS_ENDPOINT, DATE_TYPES} from "../../constants";
 import {FETCH_IMAGES_ERROR, FETCH_IMAGES_PENDING, FETCH_IMAGES_SUCCESS} from "../actionTypes";
 import {ImageProps} from "./ImageTypes";
+import {StateType} from "../StateType";
 
 export const fetchImagesPending = () => ({
     type: FETCH_IMAGES_PENDING
@@ -18,7 +19,7 @@ export const fetchImagesError = (error: string) => ({
 });
 
 export const fetchImages = () => {
-    return (dispatch: Function, getState: Function) => {
+    return (dispatch: any, getState: () => StateType) => {
         const formData = getState().formReducer;
         dispatch(fetchImagesPending());
         let url =

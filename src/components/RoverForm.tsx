@@ -11,6 +11,7 @@ import {DATE_TYPES} from "../constants";
 
 import {fetchImages} from "../redux/images/ImagesActions";
 import {formReducerProps} from "../redux/form/FormTypes";
+import {StateType} from "../redux/StateType";
 
 const RoverForm = ({formData, loadImages}: { formData: formReducerProps, loadImages: () => void }) => {
 
@@ -44,7 +45,7 @@ const mapDispatchToProps = (dispatch: Function) => ({
     loadImages: () => dispatch(fetchImages())
 });
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         formData: state.formReducer
     };

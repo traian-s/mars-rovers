@@ -4,7 +4,7 @@ export interface RoverProps {
     landing_date: string,
     launch_date: string,
     status: string,
-    max_sol: number,
+    max_sol: string,
     max_date: string,
     total_photos: number,
     cameras: CameraProps[]

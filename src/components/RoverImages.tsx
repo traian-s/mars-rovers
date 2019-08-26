@@ -3,9 +3,9 @@ import {Carousel, Col, Row, Spinner} from 'react-bootstrap';
 
 import {connect} from "react-redux";
 import {ImageProps} from "../redux/images/ImageTypes";
+import {StateType} from "../redux/StateType";
 
-const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: boolean, Error: string | null }) => {
-
+const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: boolean, Error: string | null | undefined }) => {
     return (
         <Row className="result_list justify-content-center">
             <Col lg={6}>
@@ -38,11 +38,11 @@ const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: 
     )
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
+        images: state.imageReducer.images,
         Pending: state.imageReducer.pending,
-        Error: state.imageReducer.error,
-        images: state.imageReducer.images
+        Error: state.imageReducer.error
     };
 };
 

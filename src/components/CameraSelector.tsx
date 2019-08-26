@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {selectCamera} from "../redux/form/FormActions";
 import {CameraSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
+import {StateType} from "../redux/StateType";
 
 const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProps) => {
     return (
@@ -19,7 +20,7 @@ const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProps) => {
     );
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: StateType) => {
     return {
         selectedRover: state.formReducer.selectedRover
     };
