@@ -1,0 +1,38 @@
+body {
+  background-color: $primary-color-light;
+  font-size: 18px;
+
+  #root {
+    padding-top: 56px;
+
+    .roverCol {
+      img: max-;
+    }
+
+    .roverForm {
+      .date-switcher {
+        background: none;
+        border: none;
+        padding: 0;
+        float: right;
+        cursor: pointer;
+      }
+    }
+
+    .resultList {
+      min-height: 400px;
+    }
+
+    a[class*='carousel-control-'] {
+      position: absolute;
+    }
+
+    span {
+      &.underlineHover {
+        color: $accent-color;
+        text-decoration: none;
+        @include underlineHover;
+      }
+    }
+  }
+}

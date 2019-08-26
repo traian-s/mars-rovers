@@ -1,0 +1,12 @@
+nav.navbar {
+  font-family: 'Inconsolata', monospace;
+  background-color: $primary-color-dark;
+
+  a.navbar-brand {
+    color: $primary-color-light;
+  }
+
+  .navbar-brand {
+    text-transform: uppercase;
+  }
+}
