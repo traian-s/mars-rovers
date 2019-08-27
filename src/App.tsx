@@ -34,7 +34,7 @@ export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers
     };
     useEffect(() => {
         loadRovers();
-    }, []); /* <-- Fetch API data only on first render to avoid infinite loop --> */
+    }, [loadRovers]); /* <-- Fetch API data only on first render to avoid infinite loop --> */
 
     return (
         <React.Fragment>

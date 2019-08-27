@@ -11,7 +11,7 @@ const RoverSelector = ({selectRover, rovers}: { selectRover: (rover: RoverProps 
         <Form.Group controlId="roverSelector">
             <Form.Label>Rover</Form.Label>
             <Form.Control as="select" name="selectedRover"
-                          onChange={(event: React.ChangeEvent<FormControlProps>) => selectRover(rovers.find(e => e.name === event.target.value))}>
+                          onChange={(event: React.ChangeEvent<FormControlProps>) => event.target.value && selectRover(rovers.find(e => e.name === event.target.value))}>
                 <option value="">Select Rover...</option>
                 {rovers.map((entry, index) => <option key={index} value={entry.name}>{entry.name}</option>)}
             </Form.Control>
