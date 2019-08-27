@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import {fetchRovers} from "./redux/rovers/RoverActions";
 import {RoverProps} from "./redux/rovers/RoverTypes";
 
-const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
+export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
     const WelcomeContent = () => {
         return (
             <>
