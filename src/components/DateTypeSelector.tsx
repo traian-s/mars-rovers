@@ -3,9 +3,10 @@ import {Form} from "react-bootstrap";
 import {connect} from "react-redux";
 import {setDateType} from "../redux/form/FormActions";
 import {DATE_TYPES} from "../constants";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
+import {DateTypeSelectorProps} from "../redux/form/FormTypes";
 
-const DateTypeSelector = ({activeType, setDateType}: { activeType: string, setDateType: (dateType: string) => void }) => {
+const DateTypeSelector = ({activeType, setDateType}: DateTypeSelectorProps) => {
     return (
         <Form.Text className="text-muted">
           <span
@@ -17,7 +18,7 @@ const DateTypeSelector = ({activeType, setDateType}: { activeType: string, setDa
     );
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {activeType: state.formReducer.dateType};
 };
 

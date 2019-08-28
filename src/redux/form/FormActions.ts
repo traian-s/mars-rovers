@@ -1,22 +1,29 @@
 import {SELECT_CAMERA, SELECT_EARTH_DATE, SELECT_ROVER, SELECT_SOL_DATE, SET_DATE_TYPE} from "../actionTypes";
 import {RoverProps} from "../rovers/RoverTypes";
+import {
+    SelectCameraAction,
+    SelectDateTypeAction,
+    SelectEarthDateAction,
+    SelectRoverAction,
+    SelectSolDateAction
+} from "./FormTypes";
 
-export const selectRover = (rover: RoverProps | undefined) => ({
-    type: SELECT_ROVER, payload: {rover}
+export const selectRover = (payload: RoverProps): SelectRoverAction => ({
+    type: SELECT_ROVER, payload
 });
 
-export const selectEarthDate = (earthDate: string | undefined) => ({
-    type: SELECT_EARTH_DATE, payload: {earthDate}
+export const selectEarthDate = (payload: string): SelectEarthDateAction => ({
+    type: SELECT_EARTH_DATE, payload
 });
 
-export const selectSolDate = (solDate: string | undefined) => ({
-    type: SELECT_SOL_DATE, payload: {solDate}
+export const selectSolDate = (payload: string): SelectSolDateAction => ({
+    type: SELECT_SOL_DATE, payload
 });
 
-export const selectCamera = (camera: string | undefined) => ({
-    type: SELECT_CAMERA, payload: {camera}
+export const selectCamera = (payload: string): SelectCameraAction => ({
+    type: SELECT_CAMERA, payload
 });
 
-export const setDateType = (dateType: string) => ({
-    type: SET_DATE_TYPE, payload: {dateType}
+export const setDateType = (payload: string): SelectDateTypeAction => ({
+    type: SET_DATE_TYPE, payload
 });

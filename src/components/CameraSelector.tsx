@@ -4,14 +4,14 @@ import {connect} from "react-redux";
 import {selectCamera} from "../redux/form/FormActions";
 import {CameraSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
 export const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProps) => {
     return (
         <Form.Group controlId={"cameraSelector"}>
             <Form.Label>Camera</Form.Label>
             <Form.Control as="select" name="camera" disabled={!selectedRover || !selectedRover.name}
-                          onChange={(e: React.ChangeEvent<FormControlProps>) => selectCamera(e.target.value)}>
+                          onChange={(e: React.ChangeEvent<FormControlProps>) => e.target && e.target.value && selectCamera(e.target.value)}>
                 <option value="">Any</option>
                 {selectedRover && selectedRover.cameras.map((entry, index) => <option key={index}
                                                                                       value={entry.name}>{entry.full_name}</option>)}
@@ -20,7 +20,7 @@ export const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProp
     );
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         selectedRover: state.formReducer.selectedRover
     };

@@ -9,7 +9,7 @@ import {connect} from "react-redux";
 import {fetchRovers} from "./redux/rovers/RoverActions";
 import {RoverProps} from "./redux/rovers/RoverTypes";
 
-export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
+export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
     const WelcomeContent = () => {
         return (
             <>
@@ -33,8 +33,8 @@ export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers
         )
     };
     useEffect(() => {
-        loadRovers();
-    }, [loadRovers]); /* <-- Fetch API data only on first render to avoid infinite loop --> */
+        fetchRovers();
+    }, [fetchRovers]); /* <-- Fetch API data only on first render to avoid infinite loop --> */
 
     return (
         <React.Fragment>
@@ -55,9 +55,9 @@ export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers
                     <Col lg={12}>
                         <WelcomeContent/>
                         {false !== fetchPending && <><h3>Connecting... <Spinner animation="grow"></Spinner></h3></>}
-                        {null !== fetchError && <h3> An error occured while fetching Rover data.</h3>}
+                        {'' !== fetchError && <h3> An error occured while fetching Rover data.</h3>}
                         {false === fetchPending &&
-                        null === fetchError &&
+                        '' === fetchError &&
                         rovers.length &&
                         <React.Fragment>
                             <h2>Meet the Rovers</h2>
@@ -84,10 +84,6 @@ export const App = ({loadRovers, fetchPending, fetchError, rovers}: { loadRovers
     )
 };
 
-const mapDispatchToProps = (dispatch: Function) => ({
-    loadRovers: () => dispatch(fetchRovers())
-});
-
 const mapStateToProps = (state: any) => {
     return {
         fetchPending: state.roverReducer.pending,
@@ -96,4 +92,4 @@ const mapStateToProps = (state: any) => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, {fetchRovers})(App);

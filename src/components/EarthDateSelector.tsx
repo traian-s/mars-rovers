@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {selectEarthDate} from "../redux/form/FormActions";
 import {EarthDateSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
 const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDateSelectorProps) => {
 
@@ -17,13 +17,13 @@ const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDat
                           min={selectedRover ? selectedRover.landing_date : 0}
                           max={selectedRover ? selectedRover.max_date : 0}
                           value={earthDate}
-                          onChange={(e: React.ChangeEvent<FormControlProps>) => selectEarthDate(e.target.value)}
+                          onChange={(e: React.ChangeEvent<FormControlProps>) => e.target && e.target.value && selectEarthDate(e.target.value)}
             />
         </Form.Group>
     );
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         earthDate: state.formReducer.earthDate,
         selectedRover: state.formReducer.selectedRover

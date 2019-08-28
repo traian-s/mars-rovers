@@ -8,7 +8,7 @@ import {
 } from "../../../redux/actionTypes";
 import {DATE_TYPES} from "../../../constants";
 
-describe('todos formReducer', () => {
+describe('formReducer', () => {
     it('should return the initial state', () => {
         expect(formReducer(undefined, {})).toEqual(
             {

@@ -1,25 +1,23 @@
 import axios from 'axios';
 import {API_ROVERS_ENDPOINT, DATE_TYPES} from "../../constants";
 import {FETCH_IMAGES_ERROR, FETCH_IMAGES_PENDING, FETCH_IMAGES_SUCCESS} from "../actionTypes";
-import {ImageProps} from "./ImageTypes";
-import {StateType} from "../StateType";
+import {FetchImagesErrorAction, FetchImagesPendingAction, FetchImagesSuccessAction, ImageProps} from "./ImageTypes";
+import {AppState} from "../reducers";
 
-export const fetchImagesPending = () => ({
+export const fetchImagesPending = (): FetchImagesPendingAction => ({
     type: FETCH_IMAGES_PENDING
 });
 
-export const fetchImagesSuccess = (images: ImageProps) => ({
-    type: FETCH_IMAGES_SUCCESS,
-    payload: images
+export const fetchImagesSuccess = (payload: ImageProps[]): FetchImagesSuccessAction => ({
+    type: FETCH_IMAGES_SUCCESS, payload
 });
 
-export const fetchImagesError = (error: string) => ({
-    type: FETCH_IMAGES_ERROR,
-    payload: error
+export const fetchImagesError = (payload: string): FetchImagesErrorAction => ({
+    type: FETCH_IMAGES_ERROR, payload
 });
 
 export const fetchImages = () => {
-    return (dispatch: any, getState: () => StateType) => {
+    return (dispatch: any, getState: () => AppState) => {
         const formData = getState().formReducer;
         dispatch(fetchImagesPending());
         let url =
@@ -36,11 +34,9 @@ export const fetchImages = () => {
         axios.get(url)
             .then(res => {
                 dispatch(fetchImagesSuccess(res.data.photos));
-                return res.data.photos;
             })
             .catch(error => {
                 dispatch(fetchImagesError(error.response.data.errors));
             })
-
     }
 };

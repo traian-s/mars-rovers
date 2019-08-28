@@ -1,18 +1,20 @@
 import {FETCH_IMAGES_ERROR, FETCH_IMAGES_PENDING, FETCH_IMAGES_SUCCESS} from "../actionTypes";
+import {ImagesActionTypes} from "./ImageTypes";
 
 const initialState = {
     pending: false,
-    images: [],
-    error: null
+    error: '',
+    images: {}
+
 };
 
-export default function imageReducer(state = initialState, action: { type: string, payload: any }) {
+export default function imageReducer(state = initialState, action: ImagesActionTypes) {
     switch (action.type) {
         case FETCH_IMAGES_PENDING:
             return {
                 ...state,
                 pending: true,
-                error: null
+                error: ''
             };
         case FETCH_IMAGES_SUCCESS:
             return {

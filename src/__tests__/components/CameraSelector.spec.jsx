@@ -17,7 +17,7 @@ describe('CameraSelector', () => {
 
     describe('basic rendering', () => {
         it('should render a select with label', () => {
-            component = shallow(<CameraSelector/>);
+            component = shallow(<CameraSelector selectedRover={{cameras: []}}/>);
             expect(component.exists()).toEqual(true);
             expect(component.find(FormControl).length).toEqual(1);
             expect(component.find(FormLabel).length).toEqual(1);

@@ -3,15 +3,15 @@ import {Carousel, Col, Row, Spinner} from 'react-bootstrap';
 
 import {connect} from "react-redux";
 import {ImageProps} from "../redux/images/ImageTypes";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
-const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: boolean, Error: string | null | undefined }) => {
+const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | null, Pending: boolean, Error: string }) => {
     return (
         <Row className="result_list justify-content-center">
             <Col lg={6}>
                 {Pending && <>Searching for Images... <Spinner animation="grow"></Spinner></>}
 
-                {images.length > 0 &&
+                {null !== images && images.length > 0 &&
                 <Carousel>
                     {images.map((row) =>
                         <Carousel.Item key={row.id}>
@@ -29,7 +29,7 @@ const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: 
                         </Carousel.Item>)}
                 </Carousel>
                 }
-                {1 > images.length && !Pending && !Error &&
+                {null !== images && 1 > images.length && !Pending && !Error &&
                 <p> No images found for selected parameters...</p>}
                 {Error &&
                 <p>The following errors occured: {Error}</p>}
@@ -38,7 +38,7 @@ const RoverImages = ({images, Pending, Error}: { images: ImageProps[], Pending: 
     )
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         images: state.imageReducer.images,
         Pending: state.imageReducer.pending,

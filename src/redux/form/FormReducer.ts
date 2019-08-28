@@ -1,5 +1,6 @@
 import {SELECT_CAMERA, SELECT_EARTH_DATE, SELECT_ROVER, SELECT_SOL_DATE, SET_DATE_TYPE,} from "../actionTypes";
 import {DATE_TYPES} from "../../constants";
+import {FormActionTypes} from "./FormTypes";
 
 const initialState = {
     dateType: DATE_TYPES.EARTH,
@@ -8,40 +9,40 @@ const initialState = {
     solDate: "",
     camera: "",
     selectedRover: {
-        cameras: []
+        cameras: [{}]
     }
 };
 
-export default function formReducer(state = initialState, action: { type: string, payload: any }) {
+export default function formReducer(state = initialState, action: FormActionTypes) {
     switch (action.type) {
         case SELECT_ROVER:
             return {
                 ...state,
-                selectedRover: action.payload.rover,
-                roverName: action.payload.rover.name,
-                earthDate: action.payload.rover.max_date,
-                solDate: action.payload.rover.max_sol,
+                selectedRover: action.payload,
+                roverName: action.payload.name,
+                earthDate: action.payload.max_date,
+                solDate: action.payload.max_sol,
                 camera: ""
             };
         case SET_DATE_TYPE:
             return {
                 ...state,
-                dateType: action.payload.dateType
+                dateType: action.payload
             };
         case SELECT_EARTH_DATE:
             return {
                 ...state,
-                earthDate: action.payload.earthDate
+                earthDate: action.payload
             };
         case SELECT_SOL_DATE:
             return {
                 ...state,
-                solDate: action.payload.solDate
+                solDate: action.payload
             };
         case SELECT_CAMERA:
             return {
                 ...state,
-                camera: action.payload.camera
+                camera: action.payload
             };
         default: {
             return state;

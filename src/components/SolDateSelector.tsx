@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import {selectSolDate} from "../redux/form/FormActions";
 import {SolDateSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
 const SolDateSelector = ({solDate, selectedRover, selectSolDate}: SolDateSelectorProps) => {
     return (
@@ -16,13 +16,13 @@ const SolDateSelector = ({solDate, selectedRover, selectSolDate}: SolDateSelecto
                           min="0"
                           value={solDate}
                           max={selectedRover.max_sol ? selectedRover.max_sol : 0}
-                          onChange={(e: React.ChangeEvent<FormControlProps>) => selectSolDate(e.target.value)}
+                          onChange={(e: React.ChangeEvent<FormControlProps>) => e.target.value && selectSolDate(e.target.value)}
             />
         </Form.Group>
     );
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         solDate: state.formReducer.solDate,
         selectedRover: state.formReducer.selectedRover

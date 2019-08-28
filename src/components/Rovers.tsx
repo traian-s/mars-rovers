@@ -3,7 +3,7 @@ import {Badge, Col} from 'react-bootstrap';
 import {MISSION_BADGE} from '../constants';
 import {RoverProps} from "../redux/rovers/RoverTypes";
 import {connect} from "react-redux";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
 
 const Rovers = ({rovers}: any) => {
@@ -40,7 +40,7 @@ const Rovers = ({rovers}: any) => {
     )
 };
 
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         rovers: state.roverReducer.rovers
     };

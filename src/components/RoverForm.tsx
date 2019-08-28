@@ -11,12 +11,12 @@ import {DATE_TYPES} from "../constants";
 
 import {fetchImages} from "../redux/images/ImagesActions";
 import {formReducerProps} from "../redux/form/FormTypes";
-import {StateType} from "../redux/StateType";
+import {AppState} from "../redux/reducers";
 
-const RoverForm = ({formData, loadImages}: { formData: formReducerProps, loadImages: () => void }) => {
+const RoverForm = ({formData, fetchImages}: { formData: formReducerProps, fetchImages: () => void }) => {
 
     useEffect(() => {
-        loadImages();
+        fetchImages();
     });
 
     return (
@@ -41,14 +41,10 @@ const RoverForm = ({formData, loadImages}: { formData: formReducerProps, loadIma
     )
 };
 
-const mapDispatchToProps = (dispatch: Function) => ({
-    loadImages: () => dispatch(fetchImages())
-});
-
-const mapStateToProps = (state: StateType) => {
+const mapStateToProps = (state: AppState) => {
     return {
         formData: state.formReducer
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoverForm);
+export default connect(mapStateToProps, {fetchImages})(RoverForm);
