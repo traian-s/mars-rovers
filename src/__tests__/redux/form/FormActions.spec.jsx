@@ -8,49 +8,52 @@ import {
     SET_DATE_TYPE
 } from "../../../redux/actionTypes";
 
+const dummyData = {
+    earthDate: '2019-08-08',
+    solDate: '300',
+    camera: 'FHAZ',
+    dateType: 'Earth',
+    rover: {
+        name: 'Curiosity',
+        max_date: '2019-08-08',
+        max_sol: '5000'
+    }
+};
+
 describe('actions', () => {
     it('should create an action to select an earth date', () => {
-        const earthDate = '2019-08-08';
         const expectedAction = {
             type: SELECT_EARTH_DATE,
-            payload: {earthDate}
+            payload: dummyData.earthDate
         };
-        expect(selectEarthDate(earthDate)).toEqual(expectedAction)
+        expect(selectEarthDate(dummyData.earthDate)).toEqual(expectedAction)
     });
     it('should create an action to select an sol date', () => {
-        const solDate = '300';
         const expectedAction = {
             type: SELECT_SOL_DATE,
-            payload: {solDate}
+            payload: dummyData.solDate
         };
-        expect(selectSolDate(solDate)).toEqual(expectedAction)
+        expect(selectSolDate(dummyData.solDate)).toEqual(expectedAction)
     });
     it('should create an action to select an active camera', () => {
-        const camera = 'FHAZ';
         const expectedAction = {
             type: SELECT_CAMERA,
-            payload: {camera}
+            payload: dummyData.camera
         };
-        expect(selectCamera(camera)).toEqual(expectedAction)
+        expect(selectCamera(dummyData.camera)).toEqual(expectedAction)
     });
     it('should create an action to set the active date type', () => {
-        const dateType = 'Earth';
         const expectedAction = {
             type: SET_DATE_TYPE,
-            payload: {dateType}
+            payload: dummyData.dateType
         };
-        expect(setDateType(dateType)).toEqual(expectedAction)
+        expect(setDateType(dummyData.dateType)).toEqual(expectedAction)
     });
     it('should create an action to set the active rover', () => {
-        const rover = {
-            name: 'Curiosity',
-            max_date: '2019-08-08',
-            max_sol: '5000'
-        };
         const expectedAction = {
             type: SELECT_ROVER,
-            payload: {rover}
+            payload: dummyData.rover
         };
-        expect(selectRover(rover)).toEqual(expectedAction)
+        expect(selectRover(dummyData.rover)).toEqual(expectedAction)
     });
 });

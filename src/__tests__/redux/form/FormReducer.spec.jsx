@@ -18,7 +18,7 @@ describe('formReducer', () => {
                 solDate: "",
                 camera: "",
                 selectedRover: {
-                    cameras: []
+                    cameras: [{}]
                 }
             }
         )
@@ -29,12 +29,10 @@ describe('formReducer', () => {
             formReducer([], {
                 type: SELECT_ROVER,
                 payload: {
-                    rover: {
-                        name: 'Curiosity',
-                        max_date: '2019-08-08',
-                        max_sol: '5000',
-                        camera: 'FHAZ'
-                    }
+                    name: 'Curiosity',
+                    max_date: '2019-08-08',
+                    max_sol: '5000',
+                    camera: 'FHAZ'
                 }
             })
         ).toEqual(
@@ -57,7 +55,7 @@ describe('formReducer', () => {
         expect(
             formReducer([], {
                 type: SET_DATE_TYPE,
-                payload: {dateType: 'Sol'}
+                payload: 'Sol'
             })
         ).toEqual(
             {
@@ -70,7 +68,7 @@ describe('formReducer', () => {
         expect(
             formReducer([], {
                 type: SELECT_EARTH_DATE,
-                payload: {earthDate: '2019-08-08'}
+                payload: '2019-08-08'
             })
         ).toEqual(
             {
@@ -83,7 +81,7 @@ describe('formReducer', () => {
         expect(
             formReducer([], {
                 type: SELECT_SOL_DATE,
-                payload: {solDate: '5000'}
+                payload: '5000'
             })
         ).toEqual(
             {
@@ -96,7 +94,7 @@ describe('formReducer', () => {
         expect(
             formReducer([], {
                 type: SELECT_CAMERA,
-                payload: {camera: 'FHAZ'}
+                payload: 'FHAZ'
             })
         ).toEqual(
             {

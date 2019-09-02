@@ -7,24 +7,21 @@ describe('roverReducer', () => {
         expect(roverReducer(undefined, {})).toEqual(
             {
                 pending: false,
-                rovers: [],
-                error: null
+                rovers: [{}],
+                error: ''
             }
         )
     });
     it('should handle FETCH_ROVERS_PENDING', () => {
         expect(
             roverReducer([], {
-                type: FETCH_ROVERS_PENDING,
-                payload: {
-                    pending: true,
-                    error: null
-                }
+                type: FETCH_ROVERS_PENDING
             })
         ).toEqual(
             {
                 pending: true,
-                error: null
+                error: '',
+                rovers: []
             }
         );
     });
@@ -54,9 +51,7 @@ describe('roverReducer', () => {
         expect(
             roverReducer([], {
                 type: FETCH_ROVERS_ERROR,
-                payload: {
-                    error: "Some error text"
-                }
+                payload: "Some error text"
             })
         ).toEqual(
             {

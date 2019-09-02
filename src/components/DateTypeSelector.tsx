@@ -6,7 +6,7 @@ import {DATE_TYPES} from "../constants";
 import {AppState} from "../redux/reducers";
 import {DateTypeSelectorProps} from "../redux/form/FormTypes";
 
-const DateTypeSelector = ({activeType, setDateType}: DateTypeSelectorProps) => {
+export const DateTypeSelector = ({activeType, setDateType}: DateTypeSelectorProps) => {
     return (
         <Form.Text className="text-muted">
           <span

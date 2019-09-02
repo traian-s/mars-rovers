@@ -7,8 +7,8 @@ describe('imageReducer', () => {
         expect(imageReducer(undefined, {})).toEqual(
             {
                 pending: false,
-                images: [],
-                error: null
+                images: {},
+                error: ''
             }
         )
     });
@@ -20,7 +20,7 @@ describe('imageReducer', () => {
         ).toEqual(
             {
                 pending: true,
-                error: null
+                error: ''
             }
         );
     });
