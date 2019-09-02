@@ -13,7 +13,7 @@ import {fetchImages} from "../redux/images/ImagesActions";
 import {formReducerProps} from "../redux/form/FormTypes";
 import {AppState} from "../redux/reducers";
 
-const RoverForm = ({formData, fetchImages}: { formData: formReducerProps, fetchImages: () => void }) => {
+export const RoverForm = ({formData, fetchImages}: { formData: formReducerProps, fetchImages: () => void }) => {
 
     useEffect(() => {
         fetchImages();
@@ -41,7 +41,7 @@ const RoverForm = ({formData, fetchImages}: { formData: formReducerProps, fetchI
     )
 };
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         formData: state.formReducer
     };

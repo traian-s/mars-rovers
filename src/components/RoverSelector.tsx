@@ -7,7 +7,7 @@ import {FormControlProps} from "react-bootstrap/es";
 import {SelectRoverProps} from "../redux/form/FormTypes";
 import {AppState} from "../redux/reducers";
 
-const RoverSelector = ({selectRover, rovers}: SelectRoverProps) => {
+export const RoverSelector = ({selectRover, rovers}: SelectRoverProps) => {
     const dummyRover: RoverProps = {
         id: 0,
         name: '',

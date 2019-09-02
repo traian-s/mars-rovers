@@ -6,7 +6,7 @@ import {SolDateSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
 import {AppState} from "../redux/reducers";
 
-const SolDateSelector = ({solDate, selectedRover, selectSolDate}: SolDateSelectorProps) => {
+export const SolDateSelector = ({solDate, selectedRover, selectSolDate}: SolDateSelectorProps) => {
     return (
         <Form.Group controlId="solDateSelector">
             <Form.Label>Sol Date</Form.Label>
@@ -22,7 +22,7 @@ const SolDateSelector = ({solDate, selectedRover, selectSolDate}: SolDateSelecto
     );
 };
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         solDate: state.formReducer.solDate,
         selectedRover: state.formReducer.selectedRover

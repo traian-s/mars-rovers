@@ -6,7 +6,7 @@ import {EarthDateSelectorProps} from "../redux/form/FormTypes";
 import {FormControlProps} from "react-bootstrap/es";
 import {AppState} from "../redux/reducers";
 
-const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDateSelectorProps) => {
+export const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: EarthDateSelectorProps) => {
 
     return (
         <Form.Group controlId="earthDateSelector">

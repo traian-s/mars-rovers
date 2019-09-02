@@ -6,7 +6,7 @@ import {connect} from "react-redux";
 import {AppState} from "../redux/reducers";
 
 
-const Rovers = ({rovers}: any) => {
+export const Rovers = ({rovers}: any) => {
     return (
         rovers.map((rover: RoverProps) =>
             <Col className="roverCol" lg="4" key={rover.id}>
@@ -40,7 +40,7 @@ const Rovers = ({rovers}: any) => {
     )
 };
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         rovers: state.roverReducer.rovers
     };
