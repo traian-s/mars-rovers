@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {ImageProps} from "../redux/images/ImageTypes";
 import {AppState} from "../redux/reducers";
 
-const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | null, Pending: boolean, Error: string }) => {
+export const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | null, Pending: boolean, Error: string }) => {
     return (
         <Row className="result_list justify-content-center">
             <Col lg={6}>
@@ -32,13 +32,13 @@ const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | null, Pe
                 {null !== images && 1 > images.length && !Pending && !Error &&
                 <p> No images found for selected parameters...</p>}
                 {Error &&
-                <p>The following errors occured: {Error}</p>}
+                <p className="errorMessage">The following errors occured: {Error}</p>}
             </Col>
         </Row>
     )
 };
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         images: state.imageReducer.images,
         Pending: state.imageReducer.pending,
