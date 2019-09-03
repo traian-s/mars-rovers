@@ -7,7 +7,7 @@ import RoverSelector from "../../components/RoverSelector";
 import DateTypeSelector from "../../components/DateTypeSelector";
 import CameraSelector from "../../components/CameraSelector";
 import SolDateSelector from "../../components/SolDateSelector";
-import configureMockStore from 'redux-mock-store'
+import configureMockStore from 'redux-mock-store';
 import {Provider} from "react-redux";
 import {initialState as formReducer} from "../../redux/form/FormReducer";
 import {initialState as roverReducer} from "../../redux/rovers/RoverReducer";
@@ -36,7 +36,7 @@ describe('RoverForm', () => {
         configure({adapter: new Adapter()});
     });
 
-    beforeEach(()=>{
+    beforeEach(() => {
         store = mockStore(initialState);
     });
 
@@ -64,7 +64,7 @@ describe('RoverForm', () => {
             component.setProps({formData: {dateType: 'Sol'}});
             expect(component.find(SolDateSelector).length).toEqual(1);
         });
-        it('should call fetch images when mounted', ()=>{
+        it('should call fetch images when mounted', () => {
             const fetchImages = jest.fn();
             component = mount(<Provider store={store}><RoverForm fetchImages={fetchImages} formData={dummyData} /></Provider>);
             component.setProps();

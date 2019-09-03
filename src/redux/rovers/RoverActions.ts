@@ -27,5 +27,5 @@ export const fetchRovers = () => {
                 dispatch(fetchRoversError(error));
             })
 
-    }
+    };
 };

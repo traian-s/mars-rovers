@@ -42,5 +42,4 @@ export interface FetchRoversErrorAction extends AnyAction {
 
 export type RoverActionTypes = FetchRoversErrorAction | FetchRoversSuccessAction | FetchRoversPendingAction;
 
-export interface RoverState extends roveReducerProps {
-}
+export interface RoverState extends roveReducerProps {};

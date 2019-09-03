@@ -32,7 +32,7 @@ describe('EarthDateSelector', () => {
             expect(selectEarthDate).toHaveBeenCalled();
             expect(selectEarthDate).toHaveBeenCalledWith('2019-09-09');
         });
-        it('sets proper min and max', ()=>{
+        it('sets proper min and max', () => {
             component = shallow(<EarthDateSelector selectedRover={selectedRover}/>);
             expect(component.find(FormControl).props().min).toEqual(0);
             expect(component.find(FormControl).props().max).toEqual(0);
