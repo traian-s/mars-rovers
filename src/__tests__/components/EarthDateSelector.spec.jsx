@@ -32,5 +32,18 @@ describe('EarthDateSelector', () => {
             expect(selectEarthDate).toHaveBeenCalled();
             expect(selectEarthDate).toHaveBeenCalledWith('2019-09-09');
         });
+        it('sets proper min and max', ()=>{
+            component = shallow(<EarthDateSelector selectedRover={selectedRover}/>);
+            expect(component.find(FormControl).props().min).toEqual(0);
+            expect(component.find(FormControl).props().max).toEqual(0);
+            const dummyRover = {
+                name: 'Test',
+                landing_date: '2010-09-09',
+                max_date: '2019-09-09'
+            };
+            component.setProps({selectedRover: dummyRover});
+            expect(component.find(FormControl).props().min).toEqual('2010-09-09');
+            expect(component.find(FormControl).props().max).toEqual('2019-09-09');
+        });
     });
 });

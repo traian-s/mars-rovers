@@ -1,9 +1,9 @@
 import {FETCH_IMAGES_ERROR, FETCH_IMAGES_PENDING, FETCH_IMAGES_SUCCESS} from "../actionTypes";
-import {ImagesActionTypes} from "./ImageTypes";
+import {imageReducerProps, ImagesActionTypes} from "./ImageTypes";
 
-const initialState = {
+export const initialState: imageReducerProps = {
     error: '',
-    images: {},
+    images: [],
     pending: false
 };
 

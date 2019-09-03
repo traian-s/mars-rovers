@@ -1,15 +1,16 @@
 import {SELECT_CAMERA, SELECT_EARTH_DATE, SELECT_ROVER, SELECT_SOL_DATE, SET_DATE_TYPE,} from "../actionTypes";
 import {DATE_TYPES} from "../../constants";
-import {FormActionTypes} from "./FormTypes";
+import {FormActionTypes, formReducerProps} from "./FormTypes";
 
-const initialState = {
+export const initialState: formReducerProps = {
     dateType: DATE_TYPES.EARTH,
     roverName: "",
     earthDate: "",
     solDate: "",
     camera: "",
+// @ts-ignore
     selectedRover: {
-        cameras: [{}]
+        cameras: []
     }
 };
 

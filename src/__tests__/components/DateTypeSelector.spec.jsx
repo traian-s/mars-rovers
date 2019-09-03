@@ -29,5 +29,12 @@ describe('DateTypeSelector', () => {
             expect(setDateType).toHaveBeenCalled();
             expect(setDateType).toHaveBeenLastCalledWith('Earth');
         });
+        it('calls setDateType with correct args', ()=>{
+            const setDateType = jest.fn();
+            component = shallow(<DateTypeSelector activeType={'Earth'} setDateType={setDateType}/>);
+            component.find('span').simulate('click');
+            expect(setDateType).toHaveBeenCalled();
+            expect(setDateType).toHaveBeenLastCalledWith('Sol');
+        })
     });
 });

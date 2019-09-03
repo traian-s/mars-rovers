@@ -14,8 +14,8 @@ export const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: E
             <Form.Control disabled={!selectedRover.name}
                           type="date"
                           name="earthDate"
-                          min={selectedRover ? selectedRover.landing_date : 0}
-                          max={selectedRover ? selectedRover.max_date : 0}
+                          min={selectedRover.landing_date ? selectedRover.landing_date : 0}
+                          max={selectedRover.max_date ? selectedRover.max_date : 0}
                           value={earthDate}
                           onChange={(e: React.ChangeEvent<FormControlProps>) =>
                               e.target &&

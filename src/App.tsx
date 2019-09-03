@@ -10,29 +10,29 @@ import {fetchRovers} from "./redux/rovers/RoverActions";
 import {RoverProps} from "./redux/rovers/RoverTypes";
 import {AppState} from "./redux/reducers";
 
+export const WelcomeContent = () => {
+    return (
+        <>
+            <h1>The App</h1>
+            <p>
+                This app uses NASA's Mars Rover Photos API (<a href="https://api.nasa.gov/api.html#MarsPhotos"
+                                                               className="underlineHover" target="_blank"
+                                                               rel="noopener noreferrer">link</a>) to display Photos
+                taken by the three Martian rovers filtered by a particular Earth (or Sol) date.
+                You may also filter the photos by specific camera. The app is written in React.js and uses the <a
+                rel="noopener noreferrer" className="underlineHover"
+                href="https://react-bootstrap.github.io/components/navbar/#navbars-colors"
+                target="_blank">react-bootstrap</a> framework.
+                <br/>
+                To begin simply choose one of the three Rovers and optionally filter the results by date and/or
+                camera.
+                Each time a filter is selected the app will send an request and fetch a new result set which will be
+                displayed.
+            </p>
+        </>
+    )
+};
 export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
-    const WelcomeContent = () => {
-        return (
-            <>
-                <h1>The App</h1>
-                <p>
-                    This app uses NASA's Mars Rover Photos API (<a href="https://api.nasa.gov/api.html#MarsPhotos"
-                                                                   className="underlineHover" target="_blank"
-                                                                   rel="noopener noreferrer">link</a>) to display Photos
-                    taken by the three Martian rovers filtered by a particular Earth (or Sol) date.
-                    You may also filter the photos by specific camera. The app is written in React.js and uses the <a
-                    rel="noopener noreferrer" className="underlineHover"
-                    href="https://react-bootstrap.github.io/components/navbar/#navbars-colors"
-                    target="_blank">react-bootstrap</a> framework.
-                    <br/>
-                    To begin simply choose one of the three Rovers and optionally filter the results by date and/or
-                    camera.
-                    Each time a filter is selected the app will send an request and fetch a new result set which will be
-                    displayed.
-                </p>
-            </>
-        )
-    };
     useEffect(() => {
         fetchRovers();
     }, [fetchRovers]); /* <-- Fetch API data only on first render to avoid infinite loop --> */
@@ -60,7 +60,7 @@ export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRove
                         {false === fetchPending &&
                         '' === fetchError &&
                         rovers.length &&
-                        <React.Fragment>
+                        <div className={'roversWrapper'}>
                             <h2>Meet the Rovers</h2>
                             <Row>
                                 <Rovers/>
@@ -77,7 +77,7 @@ export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRove
                                     </div>
                                 </Col>
                             </Row>
-                        </React.Fragment>}
+                        </div>}
                     </Col>
                 </Row>
             </Container>
@@ -85,7 +85,7 @@ export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRove
     )
 };
 
-const mapStateToProps = (state: AppState) => {
+export const mapStateToProps = (state: AppState) => {
     return {
         fetchError: state.roverReducer.error,
         fetchPending: state.roverReducer.pending,

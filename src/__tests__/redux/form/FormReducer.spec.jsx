@@ -18,7 +18,7 @@ describe('formReducer', () => {
                 solDate: "",
                 camera: "",
                 selectedRover: {
-                    cameras: [{}]
+                    cameras: []
                 }
             }
         );

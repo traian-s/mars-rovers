@@ -1,7 +1,7 @@
 import {FETCH_ROVERS_ERROR, FETCH_ROVERS_PENDING, FETCH_ROVERS_SUCCESS} from "../actionTypes";
 import {RoverActionTypes} from "./RoverTypes";
 
-const initialState = {
+export const initialState = {
     pending: false,
     rovers: [{}],
     error: ''
