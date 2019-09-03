@@ -45,7 +45,7 @@ describe('SolDateSelector', () => {
             const mockedState = {
                 formReducer: {
                     solDate: 100,
-                    selectedRover: selectedRover
+                    selectedRover
                 }
             };
             expect(mapStateToProps(mockedState)).toEqual({

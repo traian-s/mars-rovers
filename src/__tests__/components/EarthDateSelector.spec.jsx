@@ -31,6 +31,6 @@ describe('EarthDateSelector', () => {
             component.find(FormControl).simulate('change', event);
             expect(selectEarthDate).toHaveBeenCalled();
             expect(selectEarthDate).toHaveBeenCalledWith('2019-09-09');
-        })
+        });
     });
 });

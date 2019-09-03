@@ -34,7 +34,7 @@ describe('CameraSelector', () => {
             component = shallow(<CameraSelector selectedRover={roverWithCameras} selectCamera={selectCamera}/>);
             component.find(FormControl).simulate('change', event);
             expect(selectCamera).toHaveBeenCalled();
-            expect(selectCamera).toBeCalledWith('FHAZ')
+            expect(selectCamera).toBeCalledWith('FHAZ');
         });
     });
 });

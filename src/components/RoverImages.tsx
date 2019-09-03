@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 import {ImageProps} from "../redux/images/ImageTypes";
 import {AppState} from "../redux/reducers";
 
-export const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | null, Pending: boolean, Error: string }) => {
+export const RoverImages = ({images, Pending, Error}:
+                                { images: ImageProps[] | null, Pending: boolean, Error: string }) => {
     return (
         <Row className="result_list justify-content-center">
             <Col lg={6}>
@@ -23,7 +24,8 @@ export const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | n
                             <Carousel.Caption>
                                 <h3>{row.id}</h3>
                                 <p>Taken
-                                    by {row.camera.full_name} ({row.camera.name}) <br/>on {row.earth_date} (Sol {row.sol})
+                                    by {row.camera.full_name} ({row.camera.name}) <br/>
+                                    on {row.earth_date} (Sol {row.sol})
                                 </p>
                             </Carousel.Caption>
                         </Carousel.Item>)}

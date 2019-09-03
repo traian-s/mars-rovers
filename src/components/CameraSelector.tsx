@@ -16,8 +16,9 @@ export const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProp
                               e.target.value &&
                               selectCamera(e.target.value)}>
                 <option value="">Any</option>
-                {selectedRover && selectedRover.cameras.map((entry, index) => <option key={index}
-                                                                                      value={entry.name}>{entry.full_name}</option>)}
+                {selectedRover &&
+                selectedRover.cameras.map((entry, index) =>
+                    <option key={index} value={entry.name}>{entry.full_name}</option>)}
             </Form.Control>
         </Form.Group>
     );
