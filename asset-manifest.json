@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/mars-rovers/static/css/main.73f10bf6.chunk.css",
+    "main.js": "/mars-rovers/static/js/main.d727aa43.chunk.js",
+    "main.js.map": "/mars-rovers/static/js/main.d727aa43.chunk.js.map",
+    "runtime~main.js": "/mars-rovers/static/js/runtime~main.cc9a4fc9.js",
+    "runtime~main.js.map": "/mars-rovers/static/js/runtime~main.cc9a4fc9.js.map",
+    "static/js/2.7f05aa0e.chunk.js": "/mars-rovers/static/js/2.7f05aa0e.chunk.js",
+    "static/js/2.7f05aa0e.chunk.js.map": "/mars-rovers/static/js/2.7f05aa0e.chunk.js.map",
+    "index.html": "/mars-rovers/index.html",
+    "precache-manifest.476786e0a1a9dfda27ec8073b033060a.js": "/mars-rovers/precache-manifest.476786e0a1a9dfda27ec8073b033060a.js",
+    "service-worker.js": "/mars-rovers/service-worker.js",
+    "static/css/main.73f10bf6.chunk.css.map": "/mars-rovers/static/css/main.73f10bf6.chunk.css.map"
+  }
+}
