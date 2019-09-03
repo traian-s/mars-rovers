@@ -30,7 +30,7 @@ export const EarthDateSelector = ({earthDate, selectedRover, selectEarthDate}: E
 const mapStateToProps = (state: AppState) => {
     return {
         earthDate: state.formReducer.earthDate,
-        selectedRover: state.formReducer.selectedRover
+        selectedRover: state.formReducer.selectedRover,
     };
 };
 
