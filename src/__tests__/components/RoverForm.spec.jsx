@@ -59,7 +59,7 @@ describe('RoverForm', () => {
         it('should receive the correct state', () => {
             const mockedState = {
                 formReducer: dummyData
-            }
+            };
             expect(mapStateToProps(mockedState).formData).toEqual({
                 dateType: 'Earth',
                 roverName: '',

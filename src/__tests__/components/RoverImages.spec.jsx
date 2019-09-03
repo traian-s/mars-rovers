@@ -57,7 +57,7 @@ describe('RoverForm', () => {
                     pending: false,
                     error: ''
                 }
-            }
+            };
             expect(mapStateToProps(mockedState)).toEqual({
                 images: [],
                 Pending: false,

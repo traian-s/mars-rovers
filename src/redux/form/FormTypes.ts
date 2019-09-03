@@ -71,5 +71,4 @@ export type FormActionTypes =
     | SelectCameraAction
     | SelectDateTypeAction;
 
-export interface FormState extends formReducerProps {
-}
+export interface FormState extends formReducerProps {}

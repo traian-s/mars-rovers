@@ -3,7 +3,6 @@ import {configure, shallow} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import {RoverSelector} from '../../components/RoverSelector';
 import {FormControl, FormGroup, FormLabel} from "react-bootstrap";
-import {RoverProps} from "../../redux/rovers/RoverTypes";
 
 describe('RoverSelector', () => {
     let component;
@@ -48,8 +47,8 @@ describe('RoverSelector', () => {
             component.find(FormControl).simulate('change', event);
             expect(selectRover).toHaveBeenCalled();
             expect(selectRover).toHaveBeenCalledWith({name: 'Opportunity'});
-        })
-        it('should call selectRover with dummy data on empty event', ()=>{
+        });
+        it('should call selectRover with dummy data on empty event', () => {
             const selectRover = jest.fn();
             const emptyEvent = {target: {name: 'selectedRover', value: 'Dummy'}};
 

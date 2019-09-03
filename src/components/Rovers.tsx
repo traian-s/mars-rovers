@@ -42,7 +42,7 @@ export const Rovers = ({rovers}: any) => {
 
 export const mapStateToProps = (state: AppState) => {
     return {
-        rovers: state.roverReducer.rovers
+        rovers: state.roverReducer.rovers,
     };
 };
 

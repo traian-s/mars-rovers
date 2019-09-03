@@ -6,7 +6,7 @@ import {Badge, Col} from "react-bootstrap";
 
 describe('Rovers', () => {
     let component;
-    const dummyRovers =[
+    const dummyRovers = [
         {
             name: 'Opportunity',
             status: 'complete',
@@ -31,13 +31,13 @@ describe('Rovers', () => {
         component.unmount();
     });
 
-    describe('basic rendering', ()=>{
-        it('should render a col for each rover in props', ()=>{
+    describe('basic rendering', () => {
+        it('should render a col for each rover in props', () => {
             component = shallow(<Rovers rovers={dummyRovers}/>);
             expect(component.exists()).toEqual(true);
             expect(component.find(Col).length).toEqual(dummyRovers.length);
         });
-        it('should render title, image and a table for each rover', ()=>{
+        it('should render title, image and a table for each rover', () => {
             component = shallow(<Rovers rovers={[dummyRovers[0]]}/>);
             expect(component.exists()).toEqual(true);
             expect(component.find('h4').length).toEqual(1);
@@ -49,7 +49,7 @@ describe('Rovers', () => {
     });
 });
 
-describe('mapStateToProps', ()=> {
+describe('mapStateToProps', () => {
     it('should receive the correct state', () => {
         const mockedState = {
             roverReducer: {

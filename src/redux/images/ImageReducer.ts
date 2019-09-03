@@ -2,10 +2,9 @@ import {FETCH_IMAGES_ERROR, FETCH_IMAGES_PENDING, FETCH_IMAGES_SUCCESS} from "..
 import {ImagesActionTypes} from "./ImageTypes";
 
 const initialState = {
-    pending: false,
     error: '',
-    images: {}
-
+    images: {},
+    pending: false
 };
 
 export default function imageReducer(state = initialState, action: ImagesActionTypes) {
@@ -13,21 +12,21 @@ export default function imageReducer(state = initialState, action: ImagesActionT
         case FETCH_IMAGES_PENDING:
             return {
                 ...state,
-                pending: true,
-                error: ''
+                error: '',
+                pending: true
             };
         case FETCH_IMAGES_SUCCESS:
             return {
                 ...state,
-                pending: false,
-                images: action.payload
+                images: action.payload,
+                pending: false
             };
         case FETCH_IMAGES_ERROR:
             return {
                 ...state,
-                pending: false,
                 error: action.payload,
-                images: []
+                images: [],
+                pending: false
             };
         default:
             return state;

@@ -32,7 +32,7 @@ export const RoverImages = ({images, Pending, Error}: { images: ImageProps[] | n
                 {null !== images && 1 > images.length && !Pending && !Error &&
                 <p> No images found for selected parameters...</p>}
                 {Error &&
-                <p className="errorMessage">The following errors occured: {Error}</p>}
+                <p className="errorMessage">The following errors occurred: {Error}</p>}
             </Col>
         </Row>
     )

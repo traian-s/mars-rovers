@@ -26,7 +26,7 @@ describe('SolDateSelector', () => {
             expect(component.find(FormControl).props().max).toEqual(100);
         });
         it('should set max to zero is no max_sol property exists', () => {
-            const emptyRover = {name:'Test'};
+            const emptyRover = {name: 'Test'};
             component = shallow(<SolDateSelector selectedRover={emptyRover}/>);
             expect(component.find(FormControl).props().max).toEqual(0);
         });
