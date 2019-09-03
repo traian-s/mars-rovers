@@ -58,6 +58,5 @@ describe('RoverSelector', () => {
             expect(selectRover).toHaveBeenCalled();
             expect(selectRover).toHaveBeenCalledWith(dummyRover);
         })
-    })
-
+    });
 });

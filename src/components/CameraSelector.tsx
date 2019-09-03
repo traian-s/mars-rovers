@@ -11,7 +11,10 @@ export const CameraSelector = ({selectedRover, selectCamera}: CameraSelectorProp
         <Form.Group controlId={"cameraSelector"}>
             <Form.Label>Camera</Form.Label>
             <Form.Control as="select" name="camera" disabled={!selectedRover || !selectedRover.name}
-                          onChange={(e: React.ChangeEvent<FormControlProps>) => e.target && e.target.value && selectCamera(e.target.value)}>
+                          onChange={(e: React.ChangeEvent<FormControlProps>) =>
+                              e.target &&
+                              e.target.value &&
+                              selectCamera(e.target.value)}>
                 <option value="">Any</option>
                 {selectedRover && selectedRover.cameras.map((entry, index) => <option key={index}
                                                                                       value={entry.name}>{entry.full_name}</option>)}

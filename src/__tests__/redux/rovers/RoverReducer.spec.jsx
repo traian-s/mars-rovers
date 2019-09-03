@@ -10,7 +10,7 @@ describe('roverReducer', () => {
                 rovers: [{}],
                 error: ''
             }
-        )
+        );
     });
     it('should handle FETCH_ROVERS_PENDING', () => {
         expect(

@@ -46,7 +46,7 @@ describe('RoverForm', () => {
             component = shallow(<RoverForm formData={dummyData}/>);
             component.setProps({formData: {dateType: 'Sol'}});
             expect(component.find(SolDateSelector).length).toEqual(1);
-        })
+        });
         // it('should call fetch images when mounted', ()=>{
         //     const fetchImages = jest.fn();
         //     component = shallow(<RoverForm fetchImages={fetchImages} formData={dummyData} />);

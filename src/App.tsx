@@ -8,6 +8,7 @@ import RoverForm from './components/RoverForm';
 import {connect} from "react-redux";
 import {fetchRovers} from "./redux/rovers/RoverActions";
 import {RoverProps} from "./redux/rovers/RoverTypes";
+import {AppState} from "./redux/reducers";
 
 export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRovers: () => void, fetchPending: boolean, fetchError: string, rovers: RoverProps[] }) => {
     const WelcomeContent = () => {
@@ -84,10 +85,10 @@ export const App = ({fetchPending, fetchError, rovers, fetchRovers}: { fetchRove
     )
 };
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
     return {
-        fetchPending: state.roverReducer.pending,
         fetchError: state.roverReducer.error,
+        fetchPending: state.roverReducer.pending,
         rovers: state.roverReducer.rovers
     };
 };

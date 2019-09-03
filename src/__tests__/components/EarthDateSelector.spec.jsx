@@ -30,7 +30,7 @@ describe('EarthDateSelector', () => {
             component = shallow(<EarthDateSelector selectedRover={selectedRover} selectEarthDate={selectEarthDate}/>);
             component.find(FormControl).simulate('change', event);
             expect(selectEarthDate).toHaveBeenCalled();
-            expect(selectEarthDate).toHaveBeenCalledWith('2019-09-09')
+            expect(selectEarthDate).toHaveBeenCalledWith('2019-09-09');
         })
-    })
+    });
 });

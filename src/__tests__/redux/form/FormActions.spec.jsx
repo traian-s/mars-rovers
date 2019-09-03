@@ -26,34 +26,34 @@ describe('actions', () => {
             type: SELECT_EARTH_DATE,
             payload: dummyData.earthDate
         };
-        expect(selectEarthDate(dummyData.earthDate)).toEqual(expectedAction)
+        expect(selectEarthDate(dummyData.earthDate)).toEqual(expectedAction);
     });
     it('should create an action to select an sol date', () => {
         const expectedAction = {
             type: SELECT_SOL_DATE,
             payload: dummyData.solDate
         };
-        expect(selectSolDate(dummyData.solDate)).toEqual(expectedAction)
+        expect(selectSolDate(dummyData.solDate)).toEqual(expectedAction);
     });
     it('should create an action to select an active camera', () => {
         const expectedAction = {
             type: SELECT_CAMERA,
             payload: dummyData.camera
         };
-        expect(selectCamera(dummyData.camera)).toEqual(expectedAction)
+        expect(selectCamera(dummyData.camera)).toEqual(expectedAction);
     });
     it('should create an action to set the active date type', () => {
         const expectedAction = {
             type: SET_DATE_TYPE,
             payload: dummyData.dateType
         };
-        expect(setDateType(dummyData.dateType)).toEqual(expectedAction)
+        expect(setDateType(dummyData.dateType)).toEqual(expectedAction);
     });
     it('should create an action to set the active rover', () => {
         const expectedAction = {
             type: SELECT_ROVER,
             payload: dummyData.rover
         };
-        expect(selectRover(dummyData.rover)).toEqual(expectedAction)
+        expect(selectRover(dummyData.rover)).toEqual(expectedAction);
     });
 });

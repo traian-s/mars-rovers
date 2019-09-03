@@ -10,7 +10,7 @@ describe('imageReducer', () => {
                 images: {},
                 error: ''
             }
-        )
+        );
     });
     it('should handle FETCH_IMAGES_PENDING', () => {
         expect(

@@ -16,7 +16,10 @@ export const SolDateSelector = ({selectedRover, solDate, selectSolDate}: SolDate
                           min="0"
                           value={solDate}
                           max={selectedRover.max_sol ? selectedRover.max_sol : 0}
-                          onChange={(e: React.ChangeEvent<FormControlProps>) => e.target.value && selectSolDate(e.target.value)}
+                          onChange={(e: React.ChangeEvent<FormControlProps>) =>
+                              e.target &&
+                              e.target.value &&
+                              selectSolDate(e.target.value)}
             />
         </Form.Group>
     );

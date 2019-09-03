@@ -7,7 +7,7 @@ describe('actions', () => {
         const expectedAction = {
             type: FETCH_IMAGES_PENDING
         };
-        expect(fetchImagesPending()).toEqual(expectedAction)
+        expect(fetchImagesPending()).toEqual(expectedAction);
     });
     it('should create an action to set images', () => {
         const images = [{
@@ -17,7 +17,7 @@ describe('actions', () => {
             type: FETCH_IMAGES_SUCCESS,
             payload: images
         };
-        expect(fetchImagesSuccess(images)).toEqual(expectedAction)
+        expect(fetchImagesSuccess(images)).toEqual(expectedAction);
     });
     it('should create an action to set images fetch error', () => {
         const error = 'Some network error';
@@ -25,6 +25,6 @@ describe('actions', () => {
             type: FETCH_IMAGES_ERROR,
             payload: error
         };
-        expect(fetchImagesError(error)).toEqual(expectedAction)
+        expect(fetchImagesError(error)).toEqual(expectedAction);
     });
 });

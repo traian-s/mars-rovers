@@ -29,5 +29,5 @@ describe('DateTypeSelector', () => {
             expect(setDateType).toHaveBeenCalled();
             expect(setDateType).toHaveBeenLastCalledWith('Earth');
         });
-    })
+    });
 });

@@ -21,7 +21,7 @@ describe('formReducer', () => {
                     cameras: [{}]
                 }
             }
-        )
+        );
     });
 
     it('should handle SELECT_ROVER', () => {

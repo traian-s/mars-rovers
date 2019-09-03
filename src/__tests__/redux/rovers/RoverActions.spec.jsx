@@ -7,7 +7,7 @@ describe('actions', () => {
         const expectedAction = {
             type: FETCH_ROVERS_PENDING
         };
-        expect(fetchRoversPending()).toEqual(expectedAction)
+        expect(fetchRoversPending()).toEqual(expectedAction);
     });
     it('should create an action to set rovers', () => {
         const rovers = [{
@@ -18,7 +18,7 @@ describe('actions', () => {
             type: FETCH_ROVERS_SUCCESS,
             payload: rovers
         };
-        expect(fetchRoversSuccess(rovers)).toEqual(expectedAction)
+        expect(fetchRoversSuccess(rovers)).toEqual(expectedAction);
     });
     it('should create an action to set rover fetch error', () => {
         const error = 'Some network error';
@@ -26,6 +26,6 @@ describe('actions', () => {
             type: FETCH_ROVERS_ERROR,
             payload: error
         };
-        expect(fetchRoversError(error)).toEqual(expectedAction)
+        expect(fetchRoversError(error)).toEqual(expectedAction);
     });
 });

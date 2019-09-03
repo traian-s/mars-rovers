@@ -33,5 +33,4 @@ export interface FetchImagesErrorAction extends AnyAction {
 
 export type ImagesActionTypes = FetchImagesSuccessAction | FetchImagesErrorAction | FetchImagesPendingAction;
 
-export interface ImageState extends imageReducerProps {
-}
+export interface ImageState extends imageReducerProps {}
